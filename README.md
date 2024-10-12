@@ -31,3 +31,12 @@ tinyRAG
 安装依赖，需要 Python 3.10 以上版本。
 ```plaintext
 pip install -r requirements.txt
+```
+# RAG构建和优化策略
+对于RAG的构建及优化策略在retrieve文件夹中有详细的代码展示。此外，为了方便大家能够更好的理解构建流程，我们将2024年科大讯飞的RAG的智能问答挑战赛的部分问答数据和提取到的上下文上传到了retrieve/RAG/data目录下，供大家直接使用并且一键启动代码。😇😇😇
+# 一键启动
+```plaintext
+python main.py
+```
+这里在单独给大家详细的介绍一下各个py文件的具体含义：utils_process.py中展示的是各种工具函数的集合，bm25.py展示的是我们使用bm25进行关键词匹配召回的逻辑，faiss1.py展示的是我们使用faiss向量库进行语义检索召回的策略，rrf_fusion_phj.py展示的是多路召回后的融合逻辑，model_generate_query_write.py展示的是我们进行查询优化的策略(Query Rewrite、Hyde),model_generate.py展示的是我们使用基于各种融合策略后提取的上下文信息，bge_reanker.py展示的是我们使用基于bge-reanker-large进行重排后的精排逻辑。大家可以根据自身需求单独运行上述文件，了解原理😃😃😃
+# Agent的集成策略
